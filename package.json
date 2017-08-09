@@ -10,7 +10,8 @@
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
     "precommit": "npm test",
-    "bundle": "browserify -t babelify client/index.js > server/public/main.js"
+    "bundle": "browserify -t babelify client/index.js > server/public/main.js",
+    "bundle:watch": "watchify -vd -t babelify client/index.js -o server/public/main.js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,8 @@
     "husky": "^0.14.3",
     "npm-run-all": "^4.0.2",
     "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint-config-standard": "^17.0.0",
+    "watchify": "^3.9.0"
   },
   "dependencies": {
     "react": "^15.6.1",
