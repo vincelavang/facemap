@@ -4,13 +4,13 @@
   "description": "A web app that tracks emotions from a face.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "lint": "run-p lint:*",
     "lint:html": "htmlhint ./**/*.html",
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
-    "test": "npm run lint",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "bundle": "browserify -t babelify client/index.js > server/public/main.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/vincelavang/facemap#readme",
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
@@ -36,5 +40,10 @@
     "npm-run-all": "^4.0.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-webcam": "^0.2.0"
   }
 }
