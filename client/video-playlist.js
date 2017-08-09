@@ -6,7 +6,7 @@ export default class VideoPlaylist extends React.Component {
       <div>
         <div className="row">
           <div className="col-xs-4 pull-right">
-            <div id="nike-layer">
+            <div id="nike-layer" onClick={() => this.props.handleClick('https://www.youtube.com/embed/dOZxIpy6Gm4?showinfo=0')}>
               <h2>Video 1</h2>
             </div>
             <div id="nike" className="embed-responsive embed-responsive-16by9">
@@ -16,7 +16,7 @@ export default class VideoPlaylist extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-4 pull-right">
-            <div id="puppy-layer">
+            <div id="puppy-layer" onClick={() => this.props.handleClick('https://www.youtube-nocookie.com/embed/dlNO2trC-mk?showinfo=0')}>
               <h2>Video 2</h2>
             </div>
             <div id="puppy" className="embed-responsive embed-responsive-16by9">
@@ -26,7 +26,7 @@ export default class VideoPlaylist extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-4 pull-right">
-            <div id="funny-layer">
+            <div id="funny-layer" onClick={() => this.props.handleClick('https://www.youtube.com/embed/zv750BWrUhY?showinfo=0')}>
               <h2>Video 3</h2>
             </div>
             <div id="funny" className="embed-responsive embed-responsive-16by9">

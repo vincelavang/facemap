@@ -23,7 +23,3 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App/>, $app)
-
-// function renderVideo {
-//
-// }
