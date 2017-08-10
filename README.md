@@ -1,2 +1,2 @@
 # facemap
-A web app that tracks emotions from a face.
+A web app for advertisers who want to get feedback through emotional responses to their video ad.
