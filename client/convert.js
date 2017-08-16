@@ -1,4 +1,5 @@
 const Ffmpeg = require('ffmpeg')
+const getEmoVu = require('./emovu')
 
 module.exports = function convertVideo(file) {
   const process = new Ffmpeg('public/uploads/' + file)
@@ -8,7 +9,7 @@ module.exports = function convertVideo(file) {
         .setVideoFormat('mp4')
         .save('public/uploads/' + file + '.mp4', (error) => {
           if (!error) {
-            console.log(file)
+            getEmoVu(file)
           }
         })
     })
