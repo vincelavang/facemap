@@ -41,6 +41,10 @@ export default class VideoRecord extends React.Component {
       recording: false
     })
 
+    const data = new FormData()
+    data.append('upl', blob)
+    fetch('/uploads', { method: 'POST', body: data })
+
     this.releaseStreamFromVideo()
   }
 
