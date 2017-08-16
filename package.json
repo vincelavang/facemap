@@ -49,6 +49,7 @@
     "pg": "^7.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-multimedia-capture": "^1.0.2",
     "react-webcam": "^0.2.0"
   }
 }
