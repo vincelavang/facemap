@@ -5,7 +5,7 @@ export default class VideoPlaylist extends React.Component {
     return (
       <div>
         <div className='row'>
-          <div className='col-xs-4 pull-right'>
+          <div className='col-md-4 pull-right'>
             <div id='nike-layer' onClick={() => this.props.handleClick('https://www.youtube.com/embed/dOZxIpy6Gm4?showinfo=0')}>
               <h2>Video 1</h2>
             </div>
@@ -13,9 +13,7 @@ export default class VideoPlaylist extends React.Component {
               <iframe className='embed-responsive-item' src='https://www.youtube.com/embed/dOZxIpy6Gm4?showinfo=0' frameBorder='0' allowFullScreen></iframe>
             </div>
           </div>
-        </div>
-        <div className='row'>
-          <div className='col-xs-4 pull-right'>
+          <div className='col-md-4 col-md-offset-6 pull-right'>
             <div id='puppy-layer' onClick={() => this.props.handleClick('https://www.youtube-nocookie.com/embed/dlNO2trC-mk?showinfo=0')}>
               <h2>Video 2</h2>
             </div>
@@ -23,9 +21,7 @@ export default class VideoPlaylist extends React.Component {
               <iframe className='embed-responsive-item' src='https://www.youtube-nocookie.com/embed/dlNO2trC-mk?showinfo=0' frameBorder='0' allowFullScreen></iframe>
             </div>
           </div>
-        </div>
-        <div className='row'>
-          <div className='col-xs-4 pull-right'>
+          <div className='col-md-4 col-md-offset-4 pull-right'>
             <div id='funny-layer' onClick={() => this.props.handleClick('https://www.youtube.com/embed/zv750BWrUhY?showinfo=0')}>
               <h2>Video 3</h2>
             </div>
