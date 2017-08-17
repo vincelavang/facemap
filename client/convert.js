@@ -1,7 +1,7 @@
 const Ffmpeg = require('ffmpeg')
 const getEmoVu = require('./emovu')
 
-module.exports = function convertVideo(file) {
+module.exports = function convertVideo(file, res) {
   const process = new Ffmpeg('public/uploads/' + file)
   return process
     .then((video) => {

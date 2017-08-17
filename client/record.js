@@ -75,8 +75,7 @@ export default class VideoRecord extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h3>Video Recorder</h3>
+      <div id='camera'>
         <MediaCapturer
           constraints={{ audio: true, video: true }}
           timeSlice={10}
@@ -89,7 +88,8 @@ export default class VideoRecord extends React.Component {
             <div>
               <button onClick={start}>Start</button>
               <button onClick={stop}>Stop</button>
-              <video ref={($video) => {
+              <span><h3>Video Recorder</h3></span>
+              <video id='video' ref={($video) => {
                 this.$video = $video
               }} autoPlay></video>
             </div>} />

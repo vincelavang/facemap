@@ -25,13 +25,17 @@ h2 {
   font-weight: bolder;
 }
 
+h3 {
+  display: inline;
+  padding-left: 14px;
+}
+
 .navbar {
   margin-bottom: unset;
 }
 
 #video-size {
-  width: 840px;
-  height: 480px;
+  width: 46.99vw;
   position: relative;
   z-index: 95;
   left: 15%;
@@ -41,14 +45,13 @@ h2 {
 #camera {
   position: absolute;
   z-index: 94;
-  top: 23%;
-  left: 16%;
+  top: 13%;
+  left: 24.2%;
 }
 
 #video {
   display: block;
-  width: 840px;
-  height: 480px;
+  width: 31vw;
   position: absolute;
   z-index: 25;
 }
