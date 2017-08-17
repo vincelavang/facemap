@@ -15,7 +15,7 @@
   height: 382.11px;
   position: absolute;
   color: #eee;
-  z-index: 2;
+  z-index: 99;
 }
 
 h2 {
@@ -25,20 +25,33 @@ h2 {
   font-weight: bolder;
 }
 
+h3 {
+  display: inline;
+  padding-left: 14px;
+}
+
 .navbar {
   margin-bottom: unset;
 }
 
-#test {
-  left: 30%;
-  bottom: 10%;
+#video-size {
+  width: 46.99vw;
+  position: relative;
+  z-index: 95;
+  left: 15%;
+  margin-top: -26%;
 }
 
-#video-size {
-  width: 840px;
-  height: 480px;
-  position: relative;
-  z-index: 99;
-  left: 15%;
-  margin-top: -38%;
+#camera {
+  position: absolute;
+  z-index: 94;
+  top: 13%;
+  left: 24.2%;
+}
+
+#video {
+  display: block;
+  width: 31vw;
+  position: absolute;
+  z-index: 25;
 }

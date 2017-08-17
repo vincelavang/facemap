@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import VideoPlaylist from './video-playlist'
 import VideoDisplay from './video'
+import VideoRecord from './record'
 
 const $app = document.querySelector('#app')
 
@@ -18,6 +19,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <VideoRecord />
         <VideoPlaylist handleClick={this.handleClick} />
         <VideoDisplay url={this.state.url} />
       </div>
