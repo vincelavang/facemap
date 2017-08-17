@@ -9,7 +9,7 @@ module.exports = function convertVideo(file, res) {
         .setVideoFormat('mp4')
         .save('public/uploads/' + file + '.mp4', (error) => {
           if (!error) {
-            getEmoVu(file)
+            getEmoVu(file, res)
           }
         })
     })

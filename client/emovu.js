@@ -1,7 +1,7 @@
 const unirest = require('unirest')
 const fs = require('fs')
 
-module.exports = function getEmoVu(file) {
+module.exports = function getEmoVu(file, res) {
   console.log(file)
   unirest.post('https://eyeris-emovu1.p.mashape.com/api/video/')
     .header('X-Mashape-Key', 'SKXDqHBIvymsh30AEv3FdBcR6xr2p1A09DGjsn6WN2zYHKhJlT')
@@ -28,6 +28,6 @@ module.exports = function getEmoVu(file) {
     .attach('videoFile', fs.createReadStream('public/uploads/' + file + '.mp4'))
     .field('viewedMediaDuration', 0)
     .end(function (response) {
-      console.log(JSON.stringify(response.body, null, 2))
+      res.json(response.body, null, 2)
     })
 }
