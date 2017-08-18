@@ -13,13 +13,15 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick(url) {
-    console.log(url)
     this.setState({url: url})
+  }
+  hideVideo() {
+    this.setState({url: ''})
   }
   render() {
     return (
       <div>
-        <VideoRecord />
+        <VideoRecord handleStop={this.hideVideo.bind(this)} />
         <VideoPlaylist handleClick={this.handleClick} />
         <VideoDisplay url={this.state.url} />
       </div>
