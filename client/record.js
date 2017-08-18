@@ -44,6 +44,12 @@ export default class VideoRecord extends React.Component {
     const data = new FormData()
     data.append('upl', blob)
     fetch('/uploads', { method: 'POST', body: data })
+      .then(response => {
+        response.json()
+          .then(jsonData => {
+            console.log(jsonData)
+          })
+      })
 
     this.releaseStreamFromVideo()
   }
@@ -74,6 +80,7 @@ export default class VideoRecord extends React.Component {
     a.click()
   }
   render() {
+    console.log(this.state)
     return (
       <div id='camera'>
         <MediaCapturer
