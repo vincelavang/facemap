@@ -1,5 +1,6 @@
 import React from 'react'
 import MediaCapturer from 'react-multimedia-capture'
+import { Pie, Bar } from 'react-chartjs-2'
 
 export default class VideoRecord extends React.Component {
   constructor() {
@@ -48,6 +49,55 @@ export default class VideoRecord extends React.Component {
         response.json()
           .then(jsonData => {
             console.log(jsonData)
+
+            let EmotionData = Object.keys(jsonData.VideoFrameResults[0].FaceAnalysisResults[0].EmotionResult)
+            let MetricData = Object.keys(jsonData.VideoFrameResults[0].FaceAnalysisResults[0].MetricResult)
+            let emoLabels = []
+            let emoData = []
+            let metLabels = []
+            let metData = []
+            for (var key in EmotionData) {
+              if (EmotionData[key] !== 'Computed') {
+                emoLabels.push(EmotionData[key])
+                emoData.push(jsonData.VideoFrameResults[0].FaceAnalysisResults[0].EmotionResult[EmotionData[key]])
+              }
+            }
+
+            for (key in MetricData) {
+              if (MetricData[key] !== 'Computed') {
+                metLabels.push(MetricData[key])
+                metData.push(jsonData.VideoFrameResults[0].FaceAnalysisResults[0].MetricResult[MetricData[key]])
+              }
+            }
+
+            let emotionData = {
+              labels: emoLabels,
+              datasets: [{
+                data: emoData,
+                backgroundColor: [
+                  '#FF6384',
+                  '#4BC0C0',
+                  '#FFCE56',
+                  '#E7E9ED',
+                  '#36A2EB',
+                  'orange',
+                  'purple'
+                ]
+              }]
+            }
+            let metricData = {
+              labels: metLabels,
+              datasets: [{
+                label: 'Metrics',
+                backgroundColor: 'rgba(255,99,132,0.4)',
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                data: metData
+              }
+              ]
+            }
+            this.setState({emotionData: emotionData, metricData: metricData})
           })
       })
 
@@ -80,7 +130,6 @@ export default class VideoRecord extends React.Component {
     a.click()
   }
   render() {
-    console.log(this.state)
     return (
       <div id='camera'>
         <MediaCapturer
@@ -100,6 +149,9 @@ export default class VideoRecord extends React.Component {
                 this.$video = $video
               }} autoPlay></video>
             </div>} />
+        <Pie data={this.state.emotionData} width={300} height={300} />
+        { this.state.metricData === undefined ? '' : <Bar data={this.state.metricData} width={500} height={500} />
+        }
       </div>
     )
   }
